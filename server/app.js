@@ -126,7 +126,10 @@ app.get('/pricelist',async (req,res)=>{
 					products[data.category][data.brand] = {details:{bannerUrl:admin.carousel[data.category + '-' + data.brand.replaceAll('.','')].bannerUrl},data:[data]};
 			}else{
 				const innerData = {};
-				innerData[data.brand] = {details:{bannerUrl:admin.carousel[data.category + '-' + data.brand.replaceAll('.','')].bannerUrl},data:[data]};
+				if(admin.carousel[data.category + '-' + data.brand.replaceAll('.','')])
+					innerData[data.brand] = {details:{bannerUrl:admin.carousel[data.category + '-' + data.brand.replaceAll('.','')].bannerUrl},data:[data]};	
+				else
+					innerData[data.brand] = {details:{bannerUrl:''},data:[data]};
 				products[data.category] = innerData;	
 			}
 		})
