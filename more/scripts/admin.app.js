@@ -1,5 +1,5 @@
 const app = {
-	baseUrl:'https://aware-blue-rooster.cyclic.app',
+	baseUrl:'https://vast-teal-scallop-hat.cyclic.app',
 	body:find('body'),
 	app:find('#app'),
 	menu:find('#menu'),
